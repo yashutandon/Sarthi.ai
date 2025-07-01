@@ -1,12 +1,24 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { PlusIcon } from 'lucide-react'
+import { PlusIcon, XCircleIcon } from 'lucide-react'
 import React, { useState } from 'react'
 import NewAgentDialog from './new-agent-dialog'
+import { useAgentFilter } from '@/modules/agents/hooks/use-agents-filters'
+import { AgentsSearchFilters } from './agents-search-filters'
+import { DEFAULT_PAGE } from '@/constants'
 
 const ListHeader = () => {
+    const [filters,setFilters]=useAgentFilter();
     const [isDialogOpen,setIsDialogOpen]=useState(false);
+    const isAnyFilterModified =!!filters.search;
+
+    const onClearFilters=()=>{
+      setFilters({
+        search:'',  
+        page:DEFAULT_PAGE
+      })
+    }
   return (
     <>
     <NewAgentDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}/>
@@ -18,6 +30,12 @@ const ListHeader = () => {
                 New Agent
             
             </Button>
+        </div>
+        <div className='flex items-center gap-x-2 p-1'>
+            <AgentsSearchFilters/>
+            {isAnyFilterModified && (<Button variant='outline' size='sm' onClick={onClearFilters}>
+              <XCircleIcon />
+            </Button>)}
         </div>
     </div>
     </>
