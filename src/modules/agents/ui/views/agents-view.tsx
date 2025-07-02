@@ -9,11 +9,13 @@ import { columns } from "./components/column";
 import EmptyState from "@/components/empty-state";
 import { useAgentFilter } from "../../hooks/use-agents-filters";
 import { DataPagination}  from "./components/data-pagination";
+import { useRouter } from "next/navigation";
 
 
 
 
 export  function AgentsView(){
+  const router=useRouter();
   const [filters,setFilters]=useAgentFilter();
   const trpc = useTRPC();
   const { data } = useSuspenseQuery(
@@ -24,7 +26,11 @@ export  function AgentsView(){
 
   
   return <div className="flex-1 pb-4 px-4 md:px-8 flex flex-col gap-y-4">
-    <DataTable data={data.items}  columns={columns}/>
+    <DataTable 
+    data={data.items}
+    columns={columns}
+    onRowClick={(row)=>router.push(`/agents/${row.id}`)}
+    />
     <DataPagination
     page={filters.page}
     totalPages={data.totalPages}
@@ -48,6 +54,6 @@ export const AgentsViewLoading=()=>{
 
 export const AgentsViewError=()=>{
   return(
-    <ErrorState title="Error Loading Agent" description="Something went wrong"/>
+    <ErrorState title="Error Loading Agents" description="Something went wrong"/>
   )
 }
