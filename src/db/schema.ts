@@ -67,7 +67,7 @@ export const agents = pgTable("agents",{
   "active",
   "completed",
   "cancelled",
-  "proccessing"
+  "processing"
 ])
 
 export const meetings = pgTable("meetings",{
