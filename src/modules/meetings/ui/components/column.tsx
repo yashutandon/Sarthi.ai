@@ -70,7 +70,7 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
         className={cn("capitalize [&>svg]:size-4 text-muted-foreground",statusColorMap[row.original.status as keyof typeof statusColorMap])}
         >
           <Icon
-          className={cn(row.original.status==="proccessing" && "animate-spin")}
+          className={cn(row.original.status==="processing" && "animate-spin")}
           />
           {row.original.status}
         </Badge>
