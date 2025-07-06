@@ -86,7 +86,7 @@ export function  AgentIdView({agentId}:Props) {
   )
 }
 
-export const AgentsIdViewLoading=()=>{
+export const MeetingIdViewLoading=()=>{
   return (
     <LoadingState
     title="Loading Agent"
@@ -95,7 +95,7 @@ export const AgentsIdViewLoading=()=>{
   )
 }
 
-export const AgentsIdViewError=()=>{
+export const MeetingIdViewError=()=>{
   return(
     <ErrorState title="Error Loading Agent" description="Something went wrong"/>
   )
