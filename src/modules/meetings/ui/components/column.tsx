@@ -5,17 +5,11 @@ import { Badge } from "@/components/ui/badge"
 import { MeetingGetMany } from "@/modules/meetings/types"
 import { ColumnDef } from "@tanstack/react-table"
 import {format} from "date-fns"
-import humanizeDuration from "humanize-duration"
-import { CircleCheckIcon,CircleXIcon,ClockArrowUpIcon,ClockFadingIcon,CornerDownRightIcon,LoaderIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
 
-function formatDuration(seconds:number){
-  return humanizeDuration(seconds * 100,{
-    largest:1,
-    round:true,
-    units:["h","m","s"]
-  });
-};
+import { CircleCheckIcon,CircleXIcon,ClockArrowUpIcon,ClockFadingIcon,CornerDownRightIcon,LoaderIcon } from "lucide-react"
+import { cn, formatDuration } from "@/lib/utils"
+
+
 
 
 
