@@ -3,7 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Drawer,DrawerContent,DrawerDescription,DrawerFooter,DrawerHeader,DrawerTitle,DrawerTrigger } from "@/components/ui/drawer";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatara, AvatarImage } from "@/components/ui/avatar";
 import { GeneratedAvatar } from "@/components/generated-avatar";
 import { ChevronDownIcon, CreditCardIcon, LogOutIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -34,9 +34,9 @@ export const DashboardUserButton = () => {
       <Drawer>
         <DrawerTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center justify-between bg-white/5 hover:bg-white/10 overflow-hidden gap-x-2">
              {data.user.image ? (
-          <Avatar className="w-8 h-8">
+          <Avatara className="w-8 h-8">
             <AvatarImage src={data.user.image} alt="User avatar" />
-          </Avatar>
+          </Avatara>
         ) : (
             <GeneratedAvatar
             seed={data.user.name}
@@ -74,9 +74,9 @@ export const DashboardUserButton = () => {
     <DropdownMenu>
       <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center justify-between bg-white/5 hover:bg-white/10 overflow-hidden gap-x-2">
         {data.user.image ? (
-          <Avatar className="w-8 h-8">
+          <Avatara className="w-8 h-8">
             <AvatarImage src={data.user.image} alt="User avatar" />
-          </Avatar>
+          </Avatara>
         ) : (
             <GeneratedAvatar
             seed={data.user.name}

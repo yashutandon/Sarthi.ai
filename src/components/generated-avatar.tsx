@@ -1,7 +1,7 @@
 import {createAvatar} from '@dicebear/core'
 import {botttsNeutral, initials} from '@dicebear/collection'
 import {cn} from '@/lib/utils'
-import { Avatar,AvatarFallback,AvatarImage } from '@/components/ui/avatar'
+import { Avatara,AvatarFallback,AvatarImage } from '@/components/ui/avatar'
 
 interface GeneratedAvatarProps{
     seed:string;
@@ -24,9 +24,9 @@ export const GeneratedAvatar=({seed,className,variant}:GeneratedAvatarProps)=>{
         })
     }
     return (
-        <Avatar className={cn(className)}>
+        <Avatara className={cn(className)}>
             <AvatarImage src={avatar.toDataUri()} alt='Avatar'/>
             <AvatarFallback>{seed.charAt(0).toUpperCase()}</AvatarFallback>
-        </Avatar>
+        </Avatara>
     )
 }

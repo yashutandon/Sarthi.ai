@@ -85,8 +85,8 @@ export const SignInView = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6">
-      <Card className="overflow-hidden p-0">
+    <div className="flex flex-col gap-6 ">
+      <Card className="overflow-hidden p-0 ">
         <CardContent className="grid p-0 md:grid-cols-2">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 md:p-8">
@@ -182,7 +182,7 @@ export const SignInView = () => {
             </form>
           </Form>
           <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
-            <Image src="/logo.svg" alt="Logo" height={1900} width={1900} />
+           <Image src="/logo.svg" alt="Logo" height={1900} width={1900} />
           </div>
         </CardContent>
       </Card>
