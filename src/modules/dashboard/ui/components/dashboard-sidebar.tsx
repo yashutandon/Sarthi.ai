@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Separator } from "@/components/ui/separator";
@@ -17,7 +18,7 @@ import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {DashboardUserButton} from "./dashboard-user-button";
+import { DashboardUserButton } from "./dashboard-user-button";
 
 const firstSection = [
   {
@@ -42,16 +43,24 @@ const secondSection = [
 
 export const DashboardSidebar = () => {
   const pathname = usePathname();
+  
   return (
     <Sidebar>
       <SidebarHeader className="text-sidebar-accent-foreground">
-        <Link href="/" className="flex items-center gap-2 px-2 pt-2">
-          <Image src="/logo.svg" width={1900} height={1900} alt="Logo" />
-        </Link>
+        <div className="flex items-center justify-between px-2 pt-2">
+          <Link 
+            href="/" 
+            className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 ease-in-out"
+          >
+            <Image src="/logo.svg" width={1900} height={1900} alt="Logo" />
+          </Link>
+        </div>
       </SidebarHeader>
+      
       <div className="px-4 py-2">
-        <Separator className="opacity-100 text-[BLACK]" />
+        <Separator className="opacity-100 bg-sidebar-border" />
       </div>
+      
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
@@ -61,14 +70,16 @@ export const DashboardSidebar = () => {
                   <SidebarMenuButton
                     asChild
                     className={cn(
-                      "h-10 hover:bg-linear-to-l/oklch border border-transparent  hover:border-[#5D6B68]/10 from-sidebar-accent from-5% via-50% via-sidebar/50 to-sidebar/50",
-                      pathname===item.href && "bg-linear-to-r/oklch border-[#5D6B68]/10 "
+                      "h-10 hover:bg-linear-to-l/oklch border border-transparent hover:border-[#005C4B]/10",
+                      "from-sidebar-accent-foreground from-5% via-50% via-sidebar-accent-foreground/50 to-sidebar-accent-foreground/50",
+                      "hover:scale-105 transition-transform duration-300 ease-in-out",
+                      pathname === item.href && "bg-linear-to-r/oklch border-[#005C4B]/10"
                     )}
-                    isActive={pathname===item.href}
+                    isActive={pathname === item.href}
                   >
                     <Link href={item.href}>
-                      <item.icon className="size-5" />
-                      <span className="text-sm font-medium tracking-tight">
+                      <item.icon className="text-sidebar-foreground size-5" />
+                      <span className="text-sm text-sidebar-foreground font-medium tracking-tight hover:text-primary">
                         {item.label}
                       </span>
                     </Link>
@@ -78,10 +89,12 @@ export const DashboardSidebar = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-         <div className="px-4 py-2">
-        <Separator className="opacity-100 text-[BLACK]" />
-      </div>
-                <SidebarGroup>
+        
+        <div className="px-4 py-2">
+          <Separator className="opacity-100 bg-sidebar-border" />
+        </div>
+        
+        <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {secondSection.map((item) => (
@@ -89,14 +102,16 @@ export const DashboardSidebar = () => {
                   <SidebarMenuButton
                     asChild
                     className={cn(
-                      "h-10 hover:bg-linear-to-l/oklch border border-transparent  hover:border-[#5D6B68]/10 from-sidebar-accent from-5% via-50% via-sidebar/50 to-sidebar/50",
-                      pathname===item.href && "bg-linear-to-r/oklch border-[#5D6B68]/10 "
+                      "h-10 hover:bg-linear-to-l/oklch border border-transparent hover:border-[#005C4B]/10",
+                      "from-sidebar-accent-foreground from-5% via-50% via-sidebar-accent-foreground/50 to-sidebar-accent-foreground/50",
+                      "hover:scale-105 transition-transform duration-300 ease-in-out",
+                      pathname === item.href && "bg-linear-to-r/oklch border-[#005C4B]/10"
                     )}
-                    isActive={pathname===item.href}
+                    isActive={pathname === item.href}
                   >
                     <Link href={item.href}>
-                      <item.icon className="size-5" />
-                      <span className="text-sm font-medium tracking-tight">
+                      <item.icon className="text-sidebar-foreground size-5" />
+                      <span className="text-sm text-sidebar-foreground hover:text-primary font-medium tracking-tight">
                         {item.label}
                       </span>
                     </Link>
@@ -107,10 +122,10 @@ export const DashboardSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter className="text-white">
-        <DashboardUserButton/>
+      
+      <SidebarFooter className="text-sidebar-foreground">
+        <DashboardUserButton />
       </SidebarFooter>
     </Sidebar>
   );
 };
-
