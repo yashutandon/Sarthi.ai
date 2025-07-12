@@ -3,7 +3,7 @@
 export const HomeView = () => {
  
   return (
-     <div >
+     <div className="" >
      Home View
       </div>
     )

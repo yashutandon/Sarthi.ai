@@ -5,6 +5,7 @@ import { TRPCReactProvider } from "@/trpc/client";
 
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/context/theme-context";
 
 const inter = Inter({
  
@@ -24,12 +25,14 @@ export default function RootLayout({
   return (
     <NuqsAdapter>
     <TRPCReactProvider>
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className}  antialiased`}
+        className={`${inter.className,"theme-transition"}  antialiased`}
       >
         <Toaster/>
+        <ThemeProvider>
         {children}
+        </ThemeProvider>
       </body>
     </html>
   </TRPCReactProvider>
