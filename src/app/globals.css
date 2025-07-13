@@ -186,3 +186,58 @@
     background: var(--accent-foreground);
   }
 }
+
+/* ====== Stream Chat Dark Theme Customization ====== */
+.str-chat__theme-dark {
+  --str-chat__background-color: #0f172a;
+  --str-chat__secondary-background-color: #1e293b;
+  --str-chat__text-color: #f1f5f9;
+  --str-chat__message-bubble-color: #1e293b;
+  --str-chat__message-text-color: #f8fafc;
+  --str-chat__input-background: #1e293b;
+  --str-chat__send-button-color: #3b82f6;
+  --str-chat__border-color: #334155;
+  --str-chat__placeholder-color: #94a3b8;
+  --str-chat__scrollbar-color: #475569;
+}
+
+.str-chat__theme-dark .str-chat,
+.str-chat__theme-dark .str-chat__channel,
+.str-chat__theme-dark .str-chat__main-panel,
+.str-chat__theme-dark .str-chat__thread,
+.str-chat__theme-dark .str-chat__message-list,
+.str-chat__theme-dark .str-chat__message,
+.str-chat__theme-dark .str-chat__message-input {
+  background-color: var(--str-chat__background-color) !important;
+  color: var(--str-chat__text-color) !important;
+}
+
+.str-chat__theme-dark .str-chat__message--me .str-chat__message-text-inner {
+  background-color: #334155 !important;
+}
+
+.str-chat__theme-dark .str-chat__message-input {
+  background-color: var(--str-chat__input-background) !important;
+  border-top: 1px solid var(--str-chat__border-color);
+}
+
+.str-chat__theme-dark input,
+.str-chat__theme-dark textarea {
+  background-color: var(--str-chat__input-background) !important;
+  color: var(--str-chat__text-color) !important;
+}
+
+.str-chat__theme-dark ::placeholder {
+  color: var(--str-chat__placeholder-color) !important;
+}
+
+.str-chat__theme-dark .str-chat__message-input--send-button {
+  color: var(--str-chat__send-button-color) !important;
+}
+
+.str-chat__theme-dark ::-webkit-scrollbar-thumb {
+  background-color: var(--str-chat__scrollbar-color) !important;
+  border-radius: 6px;
+}
+
+
