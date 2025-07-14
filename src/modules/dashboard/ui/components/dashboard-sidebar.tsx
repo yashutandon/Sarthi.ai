@@ -19,7 +19,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DashboardUserButton } from "./dashboard-user-button";
-
+import { DashboardTrial } from "./dashboard-trial";
 const firstSection = [
   {
     icon: VideoIcon,
@@ -50,7 +50,7 @@ export const DashboardSidebar = () => {
         <div className="flex items-center justify-between px-2 pt-2">
           <Link 
             href="/" 
-            className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 ease-in-out"
+            className="flex items-center gap-2 scale-110 hover:scale-115 transition-transform duration-300 ease-in-out"
           >
             <Image src="/logo.svg" width={1900} height={1900} alt="Logo" />
           </Link>
@@ -124,6 +124,7 @@ export const DashboardSidebar = () => {
       </SidebarContent>
       
       <SidebarFooter className="text-sidebar-foreground">
+        <DashboardTrial/>
         <DashboardUserButton />
       </SidebarFooter>
     </Sidebar>
