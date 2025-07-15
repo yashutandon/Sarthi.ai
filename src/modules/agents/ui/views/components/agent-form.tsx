@@ -15,6 +15,7 @@ import { GeneratedAvatar } from "@/components/generated-avatar";
 import { Form,FormControl,FormField,FormItem,FormLabel,FormMessage } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 interface AgentFormProps{
     onSuccess?:()=>void;
@@ -27,18 +28,23 @@ const AgentForm = ({onSuccess,onCancel,initialValues}:AgentFormProps) => {
    const trpc=useTRPC();
     
     const queryClient=useQueryClient();
-
+    const router=useRouter();
     const createAgent=useMutation(
       trpc.agents.create.mutationOptions({
         onSuccess: async() =>{
          await queryClient.invalidateQueries(
           trpc.agents.getMany.queryOptions({}),
         );
-      
+           await queryClient.invalidateQueries(
+          trpc.premium.getFreeUsage.queryOptions(),
+        );
         onSuccess?.();
       },
         onError:(error)=>{
           toast.error(error.message)
+          if(error.data?.code==="FORBIDDEN"){
+            router.push("/upgrade");
+          }
         },
       }),
     );
@@ -65,6 +71,7 @@ const AgentForm = ({onSuccess,onCancel,initialValues}:AgentFormProps) => {
       },
         onError:(error)=>{
           toast.error(error.message)
+
         },
       }),
     );
