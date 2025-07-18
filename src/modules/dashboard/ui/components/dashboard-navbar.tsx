@@ -55,7 +55,7 @@ const DashboardNavbar = () => {
 
         {/* Theme Toggle Button aligned right */}
         <ThemeToggleButton
-          className="text-foreground hover:text-primary"
+          className="text-foreground/70"
           size="sm"
           showLabel={true}
         />

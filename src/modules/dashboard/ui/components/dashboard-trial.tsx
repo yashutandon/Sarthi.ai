@@ -29,10 +29,10 @@ export const DashboardTrial = () => {
             </div>
         </div>  
         <Button
-        className="bg-transparent border-t border-border/10 hover:bg-white/10 rounded-t-none "
+        className="bg-gradient-to-r from-blue-600/40 to-purple-600/40 border-t  hover:bg-gradient-to-r hover:from-blue-600/80 hover:to-purple-600/80  rounded-t-none "
         asChild
         >
-            <Link href="/upgrade">
+            <Link href="/upgrade" className="text-foreground dark:text-foreground">
             Upgrade
             </Link>
         </Button>

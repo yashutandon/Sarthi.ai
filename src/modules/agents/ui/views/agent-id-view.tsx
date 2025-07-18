@@ -60,7 +60,7 @@ export function  AgentIdView({agentId}:Props) {
         onRemove={handleRemoveAgent}
         
         />
-        <div className="bg-white rounded-lg border">
+        <div className=" rounded-lg border">
             <div className="px-4 py-5 gap-y-5 flex flex-col col-span-5">
                 <div className="flex items-center gap-x-3">
                     <GeneratedAvatar
@@ -89,7 +89,7 @@ export function  AgentIdView({agentId}:Props) {
   )
 }
 
-export const MeetingIdViewLoading=()=>{
+export const AgentsIdViewLoading=()=>{
   return (
     <LoadingState
     title="Loading Agent"
@@ -98,8 +98,8 @@ export const MeetingIdViewLoading=()=>{
   )
 }
 
-export const MeetingIdViewError=()=>{
-  return(
-    <ErrorState title="Error Loading Agent" description="Something went wrong"/>
-  )
+export const AgentsIdViewError = () => {
+  return (
+    <ErrorState title="Error Loading Agent" description="Something went wrong" />
+  );
 }

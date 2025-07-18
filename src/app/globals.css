@@ -56,7 +56,7 @@
   --popover-foreground: oklch(0.145 0 0);
   
   /* Primary color (e.g. buttons) */
-  --primary: oklch(74.529% 0.21732 147.493);
+  --primary: #1E3A8A;
   --primary-foreground: oklch(0.985 0 0);
   
   --secondary: oklch(0.97 0 0);
@@ -241,3 +241,24 @@
 }
 
 
+/* styles/globals.css */
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Custom animation: slow pulse */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s infinite;
+}

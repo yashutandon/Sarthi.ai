@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { MeetingIdViewError,MeetingIdViewLoading } from "@/modules/agents/ui/views/agent-id-view";
+import { AgentsIdViewError,AgentsIdViewLoading} from "@/modules/agents/ui/views/agent-id-view";
 
 interface Props{
   params:Promise<{meetingId : string}>;
@@ -29,8 +29,8 @@ const Page = async ({params}:Props) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Suspense  fallback={<MeetingIdViewLoading/>}>
-        <ErrorBoundary fallback={<MeetingIdViewError/>}>
+      <Suspense  fallback={<AgentsIdViewLoading/>}>
+        <ErrorBoundary fallback={<AgentsIdViewError/>}>
           <MeetingIdViews meetingId={meetingId}/>
         </ErrorBoundary>
       </Suspense>
