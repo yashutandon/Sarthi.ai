@@ -24,6 +24,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
+
 const formSchema = z
   .object({
     name: z.string().min(1, { message: "Name is required" }),
@@ -103,7 +104,7 @@ export const SignUpView = () => {
                 <div className="flex flex-col items-center text-center">
                   <h1 className="text-2xl font-bold">Let&apos;s get started</h1>
                   <p className="text-muted-foreground text-balance">
-                    Created your accound
+                    Create your account
                   </p>
                 </div>
                 <div className="grid gap-3">
@@ -188,7 +189,7 @@ export const SignUpView = () => {
                     <AlertTitle>{error}</AlertTitle>
                   </Alert>
                 )}
-                <Button disabled={pending} type="submit" className="w-full ">
+                <Button  disabled={pending} type="submit" className="w-full text-white bg-blue-500 hover:bg-blue-600">
                   Sign Up
                 </Button>
                 <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
@@ -228,7 +229,8 @@ export const SignUpView = () => {
               </div>
             </form>
           </Form>
-          <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
+
+          <div className="bg-radial from-sidebar-accent to-sidebar  border-white border-1  relative hidden md:flex flex-col gap-y-4 items-center justify-center">
             <Image src="/logo2.svg" alt="Logo" height={3000} width={3000} />
           </div>
         </CardContent>

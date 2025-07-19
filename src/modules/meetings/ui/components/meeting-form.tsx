@@ -186,7 +186,7 @@ const MeetingForm = ({
                 Cancel
               </Button>
             )}
-            <Button type="submit" disabled={isPending}>
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 " type="submit" disabled={isPending}>
               {isEdit ? "Update" : "Create"}
             </Button>
           </div>

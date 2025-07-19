@@ -131,7 +131,7 @@ const AgentForm = ({onSuccess,onCancel,initialValues}:AgentFormProps) => {
               Cancel
             </Button>
           )}
-          <Button disabled={isPending} type="submit">
+          <Button className=" bg-gradient-to-r from-blue-600 to-purple-600 text-black dark:text-white"  disabled={isPending} type="submit">
             {isEdit?"Update":"Create"}
           </Button>
          </div>

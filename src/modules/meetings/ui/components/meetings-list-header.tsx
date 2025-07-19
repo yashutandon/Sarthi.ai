@@ -34,7 +34,7 @@ const MeetingListHeader = () => {
     <div className='py-4 px-4 md:px-8 flex flex-col gap-y-4'>
         <div className='flex items-center justify-between'>
             <h5 className='font-medium text-xl'>My Meetings</h5>
-            <Button onClick={()=>setIsDialogOpen(true)}>
+            <Button className='bg-gradient-to-r from-blue-600 to-purple-600 text-white  hover:scale-105 transition-transform duration-300' onClick={()=>setIsDialogOpen(true)}>
                 <PlusIcon/>
                 New Meeting
             

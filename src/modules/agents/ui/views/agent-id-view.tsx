@@ -77,7 +77,7 @@ export function  AgentIdView({agentId}:Props) {
                         <p className="text-lg font-medium ">
                             Instructions
                         </p>
-                        <p className="text-neutral-800">
+                        <p className="text-neutral-800 dark:text-white ">
                             {data.instructions}
                         </p>
                     </div>

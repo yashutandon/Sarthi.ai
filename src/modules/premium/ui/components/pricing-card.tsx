@@ -25,8 +25,8 @@ const pricingCardVariants = cva(
 const iconVariants = cva("size-5 shrink-0", {
   variants: {
     variant: {
-      default: "text-white fill-primary dark:fill-primary dark:text-white",
-      highlighted: "text-black fill-white",
+      default: "text-white fill-primary dark:fill-white dark:text-black",
+      highlighted: "text-black fill-white  ",
     },
   },
   defaultVariants: {
@@ -47,7 +47,7 @@ const badgeVariants = cva("px-2 py-0.5 rounded text-xs font-semibold", {
   variants: {
     variant: {
       default:
-        "bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary",
+        "bg-gray-400 text-primary dark:bg-primary/30 dark:text-black",
       highlighted: "bg-[#F5B797] text-[#5B2B20]",
     },
   },
@@ -114,7 +114,7 @@ export const PricingCard = ({
       <Separator className="my-5 sm:my-6 opacity-10 bg-[#5D6B68] dark:bg-white/10" />
 
       <Button
-        className="w-full text-sm sm:text-base"
+        className="w-full  text-sm sm:text-base"
         size="lg"
         variant={variant === "highlighted" ? "default" : "outline"}
         onClick={onClick}

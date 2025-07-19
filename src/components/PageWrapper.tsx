@@ -22,7 +22,7 @@ export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.35, ease: 'easeInOut' }}
-        className="flex flex-col min-h-[100dvh] w-full overflow-y-auto md:overflow-visible"
+        className="flex flex-col min-h-[100dvh] w-full overflow-y-auto "
       >
         {children}
       </motion.div>
