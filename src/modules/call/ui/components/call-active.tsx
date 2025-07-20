@@ -11,7 +11,7 @@ interface Props {
 
 export const CallActive = ({ onLeave, meetingName }: Props) => {
   return (
-    <div className="flex flex-col justify-between h-screen bg-black text-white px-4 py-2 sm:px-6 sm:py-4 overflow-hidden">
+    <div className="flex flex-col justify-center h-screen bg-black text-white px-4 py-2 sm:px-6 sm:py-4  overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 bg-[#101213] rounded-xl p-3 sm:p-4 w-full max-w-full">
         <Link
@@ -32,12 +32,12 @@ export const CallActive = ({ onLeave, meetingName }: Props) => {
       </div>
 
       {/* Speaker View */}
-      <div className="flex-1 mt-4 overflow-hidden">
+      <div className=" mt-4 overflow-hidden">
         <SpeakerLayout />
       </div>
 
       {/* Call Controls */}
-      <div className="bg-[#101213] rounded-xl px-4 py-3 mt-4">
+      <div className="bg-[#101213] rounded-xl px-4 py-3 flex-1  ">
         <CallControls onLeave={onLeave} />
       </div>
     </div>

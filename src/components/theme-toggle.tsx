@@ -41,9 +41,7 @@ export function ThemeToggleButton({
           ) : (
             <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
           )}
-          <span className="capitalize text-sm">
-            {isLight ? "Light" : "Dark"}
-          </span>
+  
         </>
       ) : (
         <>
